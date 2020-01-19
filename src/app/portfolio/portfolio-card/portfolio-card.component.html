@@ -9,7 +9,7 @@
           <p>Profit</p>
         </div>
         <div class="col">
-          <p>{{portfolio.profit}}</p>
+          <p>{{portfolio.profit | amount}}</p>
         </div>
       </div>
       <div class="row">
@@ -17,7 +17,7 @@
           <p>Gain</p>
         </div>
         <div class="col">
-          <p>{{(portfolio.initialAmount + portfolio.amountAdded) / portfolio.profit | number: '2.0-2'}} %</p>
+          <p>{{(portfolio.initialAmount + portfolio.amountAdded) / portfolio.profit | number: '1.0-2'}} %</p>
         </div>
       </div>
     </div>
