@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col mt-2">
+      <button type="button" class="btn btn-primary pull-right">
+        <a class="fa fa-plus"></a>
+        Add Portfolio
+      </button>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="card mt-3 mr-4 col-3" *ngFor="let portfolio of portfolios">
+      <app-portfolio-card [portfolio]="portfolio"></app-portfolio-card>
+    </div>
+  </div>
+</div>
+
