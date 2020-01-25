@@ -17,7 +17,7 @@
           <p>Gain</p>
         </div>
         <div class="col">
-          <p>{{(portfolio.initialAmount + portfolio.amountAdded) / portfolio.profit | number: '1.0-2'}} %</p>
+          <p>{{ (portfolio.profit / (portfolio.initialAmount + portfolio.amountAdded)) * 100 | number: '1.0-2'}} %</p>
         </div>
       </div>
     </div>

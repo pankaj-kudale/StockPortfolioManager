@@ -1,0 +1,40 @@
+<div>
+  <h4 class="text-center">Create New Portfolio</h4>
+  <form class="needs-validation" novalidate NgForm #form="ngForm" (ngSubmit)="submitForm(form)">
+    <div class="form-row">
+      <div class="col-md-8 mb-3">
+        <label for="portfolioName">Portfolio Name</label>
+        <input type="text" class="form-control" id="portfolioName" name="portfolioName" placeholder="Portfolio Name" 
+         required [(ngModel)]="portfolio.name" #name="ngModel" [ngClass]="{'is-invalid': name.dirty && name.errors}" />
+        <span *ngIf="name.dirty && name.errors">
+          <span *ngIf="name.errors.required" style="color: red">
+            Please enter name for portfolio
+          </span>
+        </span>
+      </div>
+      <div class="col-md-8 mb-3">
+        <label for="intialAmount">Initial Amount</label>
+        <input type="text" class="form-control" id="intialAmount" placeholder="Intial Amount"
+         required name="intialAmount" [(ngModel)]="portfolio.initialAmount" #amount="ngModel"
+         [ngClass]="{ 'is-invalid': amount.dirty && amount.errors}">
+         <span *ngIf="amount.dirty && amount.errors">
+          <span *ngIf="amount.errors.required" style="color: red">
+            Please enter initial amount for portfolio
+          </span>
+        </span>
+      </div>
+      <div class="col-md-8 mb-3">
+        <label for="positions">Positions</label>
+          <input type="number" class="form-control" id="positions" placeholder="Positions" 
+           required name="positions" [(ngModel)]="portfolio.positions" #position="ngModel"
+           [ngClass]="{ 'is-invalid': position.dirty && position.errors}">
+           <span *ngIf="position.dirty && position.errors">
+            <span *ngIf="position.errors.required" style="color: red">
+              Please enter number of postions in portfolio
+            </span>
+          </span>
+      </div>
+    </div>
+     <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Add Portfolio</button>
+  </form>
+</div>

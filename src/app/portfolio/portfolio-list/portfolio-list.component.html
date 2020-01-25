@@ -1,7 +1,6 @@
-<div class="container">
   <div class="row">
-    <div class="col mt-2">
-      <button type="button" class="btn btn-primary pull-right">
+    <div class="col">
+      <button type="button" class="btn btn-primary pull-right" [routerLink]="['/portfolio/new']">
         <a class="fa fa-plus"></a>
         Add Portfolio
       </button>
@@ -13,5 +12,4 @@
       <app-portfolio-card [portfolio]="portfolio"></app-portfolio-card>
     </div>
   </div>
-</div>
 
