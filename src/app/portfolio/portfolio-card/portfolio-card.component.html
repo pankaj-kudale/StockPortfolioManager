@@ -1,7 +1,8 @@
   <div class="card-body">
     <h6 class="card-title">
       {{portfolio.name}}
-      <i class="fa fa-pencil pull-right"></i>
+      <i class="fa fa-pencil pull-right" [routerLink]="['/portfolio/edit', portfolio.portfolioId]" 
+        routerLinkActive="router-link-active" ></i>
     </h6>
     <div class="card-text">
       <div class="row">

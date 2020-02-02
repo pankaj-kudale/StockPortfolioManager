@@ -1,0 +1,33 @@
+<div *ngIf="portfolio">
+  <h4>
+    {{portfolio.name}}
+  </h4>
+  <br/>
+  <div class="row">
+    <div class="card col-sm-2 col-xs-12 mr-3 mt-2 pt-2 ml-3 pb-1">
+      <h6>Total Profit</h6>
+      <h6>{{portfolio.profit | amount}}</h6>
+    </div>
+
+    <div class="card col-sm-2 col-xs-12 mr-3 mt-2 pt-2 ml-3 pb-1">
+      <h6>Current Year</h6>
+      <h6>{{portfolio.profit| amount}}</h6>
+    </div>
+
+    <div class="card col-sm-2 col-xs-12 mr-3 mt-2 pt-2 ml-3  pb-1">
+      <h6>Total %</h6>
+      <h6>{{(portfolio.profit / (portfolio.initialAmount + portfolio.amountAdded) ) *100 + ' %'}}</h6>
+    </div>
+
+    <div class="card col-sm-2 mr-3 mt-2 pt-2 ml-3 col-xs-12 pb-1">
+      <h6>CAGR</h6>
+      <h6>{{(portfolio.profit / (portfolio.initialAmount + portfolio.amountAdded) ) *100 + ' %'}}</h6>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 mt-3">
+      
+    </div>
+  </div>
+</div>

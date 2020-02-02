@@ -33,4 +33,8 @@ export class PortfolioService {
     this.portfolios.push(newPortfolio);
     return of(newPortfolio);
   }
+
+  getPortfolio(id: number): Observable<Portfolio>{
+    return of(this.portfolios.find(p => p.portfolioId == id));
+  }
 }
