@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRouteSnapshot, Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { ChartDataSets, ChartOptions } from 'chart.js';
+import { Color, Label } from 'ng2-charts';
 
 import { Portfolio } from '../portfolio';
 import { PortfolioService } from '../portfolio.service';
@@ -11,45 +13,23 @@ import { PortfolioService } from '../portfolio.service';
 })
 export class EditPortfolioComponent implements OnInit {
   portfolio: Portfolio
-  
-  view: any[] = [700, 300];
-
-  // options
-  showLabels: boolean = true;
-  animations: boolean = true;
-  xAxis: boolean = true;
-  yAxis: boolean = true;
-  showYAxisLabel: boolean = true;
-  showXAxisLabel: boolean = true;
-  xAxisLabel: string = 'Trades';
-  yAxisLabel: string = 'Profit';
-
-  multi = [
-    {
-      "name": "Profit",
-      "series": [
-        {
-          "name": "1",
-          "value": 1200
-        },
-        {
-          "name": "2",
-          "value": 1700
-        },
-        {
-          "name": "3",
-          "value": 2450
-        }
-      ]
-    }
-  ]
-
-  colorScheme = {
-    domain: ['#5AA454']
+  public lineChartData: ChartDataSets[] = [
+    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
+  ];
+  public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartOptions = {
+    responsive: true,
   };
-  
+  public lineChartColors: Color[] = [
+    {
+      borderColor: 'black',
+      backgroundColor: 'rgba(255,0,0,0.3)',
+    },
+  ];
+  public lineChartLegend = true;
+  public lineChartType = 'line';
+  public lineChartPlugins = [];
   constructor(private activatedRoute: ActivatedRoute, private portfolioService: PortfolioService) {
-    Object.assign(this, { multi: this.multi });
   }
 
   ngOnInit() {
@@ -59,5 +39,4 @@ export class EditPortfolioComponent implements OnInit {
         result => { this.portfolio = result; }
       ); 
   }
-
 }

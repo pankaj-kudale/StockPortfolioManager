@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChartsModule } from 'ng2-charts';
+ 
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
 import { PortfolioCardComponent } from './portfolio-card/portfolio-card.component';
 import { SharedModule } from '../shared/shared.module';
@@ -23,7 +24,8 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes),
     CommonModule,
-    NgxChartsModule
+    BrowserAnimationsModule,
+    ChartsModule
   ]
 })
 export class PortfolioModule { }
